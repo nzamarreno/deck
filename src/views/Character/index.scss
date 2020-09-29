@@ -1,0 +1,130 @@
+.character {
+    background-color: #181815;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    &__preview {
+        flex: 0 0 36vw;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex: 1;
+        height: 100%;
+        padding: 5rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+.character-view {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        color: white;
+        font-weight: 600;
+        font-size: 6vw;
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        opacity: .1;
+        position: absolute;
+        bottom: 0;
+        left: 2rem;
+        z-index: 1;
+    }
+
+    &__picture {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.character-selection {
+    display: flex;
+
+    &__title {
+        flex: 0 0 30%;
+        color: white;
+        font-size: 4rem;
+        line-height: 4.8rem;
+        font-weight: 700;
+    }
+
+    &__slider {
+        flex: 1;
+    }
+}
+
+.character-desc {
+    &__title {
+        color: white;
+        font-size: 8rem;
+        line-height: 4.5rem;
+        font-weight: 600;
+    }
+
+    &__subtitle {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+
+    &__content {
+        color: white;
+        display: flex;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        margin-top: 5rem;
+    }
+
+    &__column {
+        flex: 1;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    &__user {
+        display: flex;
+        margin-top: 6rem;
+    }
+
+    &__input {
+        border-radius: .5rem;
+        background-color: black;
+        opacity: .4;
+        border: none;
+        height: 4rem;
+        flex: 1;
+        margin-right: 2rem;
+        padding: 1rem;
+        color: white;
+        font-family: $font;
+        font-weight: 500;
+        font-size: 2rem;
+    }
+
+    &__button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        border-radius: .5rem;
+        border: none;
+        line-height: 4.5rem;
+        color: white;
+        font-family: $font;
+        font-weight: 600;
+        padding: 0 2rem; 
+        background-color: #007573;
+        cursor: pointer;
+    }
+}

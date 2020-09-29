@@ -1,0 +1,39 @@
+.c-input {
+    display: inline-flex;
+    position: relative;
+    margin: 0 2rem;
+
+    @media screen and (min-width: $md) {
+        width: 64rem;
+    }
+
+    &__input {
+        width: 100%;
+        background-color: white;
+        border: none;
+        height: 6rem;
+        border-radius: 1000rem;
+        padding: 0 3rem;
+        font-family: $font;
+        color: $one;
+        font-weight: 600;
+        font-size: 2rem;
+
+        &::-webkit-input-placeholder {
+            /* Edge */
+            font-weight: 400;
+            color: $one;
+        }
+
+        &:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            font-weight: 400;
+            color: $one;
+        }
+
+        &::placeholder {
+            font-weight: 400;
+            color: $one;
+        }
+    }
+}

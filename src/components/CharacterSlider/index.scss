@@ -1,0 +1,30 @@
+.character-slider {
+    display: flex;
+    &__item {
+        flex: 1;
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+            svg {
+                transform: translateY(-1rem);
+            }
+        }
+    }
+
+    &__picture {
+        position: relative;
+        z-index: 2;
+    }
+
+    svg {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: -1rem;
+        left: 0;
+        transition: transform .3s;
+    }
+}

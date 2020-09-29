@@ -1,0 +1,394 @@
+.board-card {
+    width: 32rem;
+    height: 48rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 3rem;
+    margin: auto;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: rotate(4deg);
+
+    @media screen and (min-width: $md) {
+        width: 36rem;
+        height: 51rem;
+        padding: 2.5rem;
+        margin: initial;
+    }
+
+    &__title {
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+        padding: 2rem 0;
+    }
+
+    &__picture {
+        height: 15rem;
+        background-color: white;
+        margin: 0 1rem;
+        background-size: cover;
+    }
+
+    &__desc {
+        text-align: center;
+        color: white;
+        padding: 2rem;
+
+        strong {
+            display: block;
+
+        }
+    }
+
+    &__wrapper {
+        border-radius: 3rem;
+        background: red;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.board {
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: $lg) {
+        height: 100%;
+        max-width: 120rem;
+        margin: auto;
+        align-items: center;
+    }
+
+    &__wrapper {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
+        @media screen and (min-width: $md) {
+            margin-top: 4rem;
+            flex-direction: row;
+        }
+    }
+
+    &__play {
+        position: relative;
+
+        @media screen and (min-width: $md) {
+            padding-top: 12rem;
+            padding-left: 12rem;
+            flex: 1;
+        }
+    }
+
+    &__deck {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(70%);
+
+        @media screen and (min-width: $md) {
+            position: relative;
+            transform: translateY(0%);
+        }
+    }
+}
+
+.board-play-synopsis {
+    @media screen and (min-width: $md) {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__desc {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title {
+        font-size: 4rem;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+
+        @media screen and (min-width: $md) {
+            margin-top: 2rem;
+            margin-left: 8rem;
+        }
+    }
+
+    &__info {
+        color: white;
+        margin-left: 5rem;
+        font-weight: 600;
+        font-size: 1.6rem;
+        display: none;
+
+        @media screen and (min-width: $md) {
+            display: block;
+        }
+    }
+
+    &__shape {
+        width: 39rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+}
+
+.deck {
+    width: 26rem;
+    height: 37rem;
+    position: relative;
+    cursor: pointer;
+    display: none;
+
+    @media screen and (min-width: $md) {
+        display: block;
+    }
+
+    &:hover {
+        .deck-card {
+            transform: rotate(0);
+            transition: transform .3s;
+
+            &:last-child {
+                transform: translateY(-1rem);
+                transition: transform .3s .3s;
+
+            }
+        }
+    }
+
+    &-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: white;
+        padding: 2rem;
+        border-radius: 3rem;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        transition: transform .3s;
+
+        &:first-child {
+            transform: rotate(4deg);
+        }
+
+        &:nth-child(2) {
+            transform: rotate(0);
+        }
+
+        &:last-child {
+            transform: rotate(-4deg);
+        }
+
+        &__wrapper {
+            border-radius: 3rem;
+            width: 100%;
+            height: 100%;
+            background-repeat: repeat;
+            background-size: 5.2rem 3rem;
+            background-image: url("./assets/images/wiggle.svg");
+        }
+    }
+}
+
+.board-deck-wrapper {
+    display: flex;
+}
+
+.deck-notice {
+    display: none;
+    margin-right: 2rem;
+
+    @media screen and (min-width: $md) {
+        display: block;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 5rem;
+        line-height: 5rem;
+        color: white;
+    }
+}
+
+.board-room {
+    display: none;
+
+    @media screen and (min-width: $md) {
+        display: block;
+    }
+
+    &__share {
+        color: white;
+        font-weight: 600;
+        font-size: 2.5rem;
+        margin: 0 0 .5rem 0;
+    }
+
+    &__copy {
+        background-color: $three;
+        border-radius: 1000rem;
+        display: inline-block;
+        padding: .5rem 3rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+}
+
+.board-play-folio {
+    width: 6rem;
+
+    li {
+        text-align: center;
+
+        &:first-child {
+            font-weight: 700;
+            font-size: 5rem;
+            line-height: 5.5rem;
+        }
+    
+        &:last-child {
+            border-top: .1rem solid white;
+            font-weight: 100;
+            font-size: 3rem;
+        }
+    }
+}
+
+.currentColor {
+    path {
+        fill: currentColor;
+    }
+}
+
+.board-error {
+    width: 100%;
+    text-align: center;
+    margin: 0 2rem;
+
+    &__title {
+        color: $three;
+        font-weight: 600;
+        font-size: 5rem;
+    }
+
+    &__desc {
+        color: white;
+        font-size: 3rem;
+        max-width: 50rem;
+        margin: auto;
+    }
+}
+
+.deck-command {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    transform: translateX(-50%);
+
+    @media screen and (min-width: $md) {
+        display: none;
+    }
+
+    &__button {
+        width: 5rem;
+        height: 5rem;
+        padding: 1rem;
+        border-radius: 50%;
+        border: none;
+        margin: 0 .5rem;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        background-color: white;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        &--share {
+            path {
+                fill: $one;
+            }
+        }
+
+        &--retry {
+            path {
+                fill: $one;
+            }
+        }
+
+        &--next {
+            width: 9rem;
+            height: 9rem;
+            background-color: $three;
+
+            path {
+                fill: $one;
+            }
+        }
+
+        &--hand {
+            width: 9rem;
+            height: 9rem;
+            background-color: $two;
+
+            path {
+                fill: $one;
+            }
+        }
+    }
+}
+
+.board-help {
+    color: $one;
+    padding: 2rem;
+    border-radius: .4rem;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    z-index: 5;
+    margin: 1rem;
+    background-image: url("./assets/images/wiggle.svg");
+    background-color: $two;
+    background-size: 70%;
+    opacity: 0;
+    animation: helperEntrance 1s forwards;
+
+    &__username {
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    &__desc {
+        font-size: 1.4rem;
+    }
+}
+
+@keyframes helperEntrance {
+    from {
+        opacity: 0;
+        transform: translateX(-1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}

@@ -1,0 +1,44 @@
+.toaster {
+    color: $one;
+    padding: 2rem;
+    border-radius: .4rem;
+    display: inline-block;
+    position: fixed;
+    background-image: url("./assets/images/wiggle.svg");
+    background-color: $two;
+    background-size: cover;
+    animation: toasterEntrance .5s 2s forwards;
+    width: calc(100% - 4rem);
+    margin: 2rem;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+
+    @media screen and (min-width: $md) {
+        width: 40rem;
+        bottom: 2rem;
+        right: 2rem;
+    }
+
+    &__title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    &__desc {
+        font-weight: 600;
+        margin-bottom: .5rem;
+        font-size: 2rem;
+    }
+}
+
+@keyframes toasterEntrance {
+    from {
+        opacity: 0;
+        transform: translate(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

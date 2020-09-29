@@ -1,0 +1,106 @@
+.slider {
+    width: 100vw;
+    padding: 0 2rem;
+
+    &__wrapper {
+        padding: 3rem 0;
+    }
+}
+
+.card {
+    position: relative;
+    //margin: 0 1.5rem;
+
+    &__wrapper {
+        position: relative;
+        text-align: left;
+        border-radius: 3rem;
+        background-color: white;
+        z-index: 1;
+        padding: 3rem;
+        cursor: pointer;
+
+        &.--is-active {
+            background-color: currentColor;
+            transition: all .3s;
+
+            svg path {
+                fill: white;
+            }
+
+            .card__title {
+                color: white;
+            }
+
+            .card__synopsis {
+                color: white;
+            }
+
+            .card__subtitle {
+                color: currentColor;
+            }
+        }
+    }
+
+    &__inner {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 3rem;
+        z-index: 0;
+        transition: all 0.3s;
+    }
+
+    &:hover {
+        .card__inner {
+            transform: rotate(5deg);
+        }
+    }
+
+    &__slider {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__synopsis {
+        margin: 0;
+        color: #8a8a8a;
+    }
+
+    &__shape {
+        width: 20rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 6rem;
+    }
+
+    &__subtitle {
+        position: absolute;
+        bottom: 2rem;
+        color: white;
+        font-size: 8rem;
+    }
+}
+
+.selection {
+    &__button {
+        margin-top: 2rem;
+
+        @media screen and (min-width: $md) {
+            margin-top: 4rem;
+        }
+    }
+}
