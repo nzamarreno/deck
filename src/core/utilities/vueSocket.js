@@ -3,7 +3,11 @@ export class VueSocket {
         const portServer = port || 1337;
         window.WebSocket = window.WebSocket || window.MozWebSocket;
         
-        this.connection = new WebSocket(`wss://websock.ngrok.io`);
+        // configure your websocket address here, in http
+        this.connection = new WebSocket(`ws://localhost:${portServer}`);
+
+        // configure your websocket address here, in https
+        // this.connection = new WebSocket(`wss://websock.ngrok.io`);
         
         this.connection.onopen = function () {
             console.log("Connexion is ready");

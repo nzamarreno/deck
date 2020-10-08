@@ -59,18 +59,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 // Import Views
-@import "./views/Character/index.scss";
-@import "./views/Home/index.scss";
-@import "./views/Game/index.scss";
-@import "./views/Cards/index.scss";
 @import "./views/Welcome/index.scss";
-@import "./views/Test/index.scss";
 @import "./views/Selection/index.scss";
 @import "./views/Board/index.scss";
 @import "./views/PageTransition/index.scss";
 
 // Import Components
-@import "./components/CharacterSlider/index.scss";
 @import "./components/button.scss";
 @import "./components/input.scss";
 @import "./components/Toaster/index.scss";

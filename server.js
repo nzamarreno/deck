@@ -1,3 +1,4 @@
+require('dotenv').config();
 const http = require("http");
 var webSocketServer = require('websocket').server;
 
@@ -5,7 +6,7 @@ var webSocketServer = require('websocket').server;
 process.title = 'node-chat';
 
 // Configuration
-const webSocketsServerPort = 1337;
+const webSocketsServerPort = process.env.PORT_WEBSOCKET;
 
 const TYPE_MESSAGE = {
     JOIN: "JOIN",

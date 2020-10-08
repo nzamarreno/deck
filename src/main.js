@@ -1,13 +1,10 @@
+require('dotenv').config()
 import 'regenerator-runtime/runtime';
 import Vue from 'vue';
 import Welcome from './views/Welcome/index.vue';
 import Selection from './views/Selection/index.vue';
-import Game from './views/Game/index.vue';
-import Test from './views/Test/index.vue';
 import Board from './views/Board/index.vue';
-import Cards from './views/Cards/index.vue';
 import App from "./views/App/index.vue";
-import Character from './views/Character/index.vue';
 import VueRouter from "vue-router";
 import {VueSocket} from "./core/utilities/VueSocket"
 import {GraphClient} from "./core/utilities/graphClient";
@@ -20,12 +17,7 @@ Vue.prototype.$Emitter = new Emitter();
 const routes = [
     { path: '/', component:  Welcome },
     { path: '/selection', component:  Selection },
-    { path: '/board/:id', component:  Board },
-    { path: '/characters', component: Character },
-    { path: '/game', component: Game },
-    { path: '/cards', component: Cards },
-    { path: '/cards', component: Cards },
-    { path: '/test', component: Test },
+    { path: '/board/:id', component:  Board }
 ];
 
 const router = new VueRouter({
